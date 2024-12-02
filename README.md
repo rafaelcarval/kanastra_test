@@ -1,7 +1,23 @@
 
 # Laravel CSV Processor with Queue Jobs
 
-Este projeto é uma API desenvolvida com Laravel para processar arquivos CSV, utilizando filas para gerenciar o processamento assíncrono de grandes volumes de dados. A aplicação foi containerizada com Docker e inclui suporte para filas utilizando o driver de banco de dados.
+## Índice
+
+1. [📋 Funcionalidades](#-funcionalidades)
+2. [🛠️ Pré-requisitos](#️-pré-requisitos)
+3. [🚀 Configuração do Ambiente](#-configuração-do-ambiente)
+4. [🔥 Como Usar a API](#-como-usar-a-api)
+   - [Fazer Upload de um Arquivo CSV](#1-fazer-upload-de-um-arquivo-csv)
+   - [Estrutura do Arquivo CSV](#2-estrutura-do-arquivo-csv)
+5. [📂 Estrutura do Projeto](#-estrutura-do-projeto)
+6. [🛠️ Monitoramento das Filas](#️-monitoramento-das-filas)
+   - [Verificar Jobs Pendentes](#1-verificar-jobs-pendentes)
+   - [Verificar Jobs com Falha](#2-verificar-jobs-com-falha)
+   - [Reprocessar Jobs com Falha](#3-reprocessar-jobs-com-falha)
+   - [Logs do Laravel](#4-logs-do-laravel)
+7. [🌟 Logs Esperados](#-logs-esperados)
+8. [🧪 Testando o Sistema](#-testando-o-sistema)
+9. [🐳 Comandos Úteis no Docker](#-comandos-úteis-no-docker)
 
 ---
 
