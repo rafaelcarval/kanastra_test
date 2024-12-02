@@ -254,4 +254,4 @@ docker-compose exec kanastra_app tail -f storage/logs/laravel.log
 
 ---
 
-Com isso, você terá um ambiente funcional e a documentação para rodar, monitorar e verificar o processamento do CSV! Se precisar de ajustes, avise!
+FINISHED
