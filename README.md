@@ -40,8 +40,8 @@ Este projeto é uma API desenvolvida com Laravel para processar arquivos CSV, ut
 1. **Clone o repositório:**
 
    ```bash
-   git clone <url-do-repositorio>
-   cd <nome-do-repositorio>
+   git clone https://github.com/rafaelcarval/kanastra_test
+   cd kanastra_test
    ```
 
 2. **Configurar o `.env`:**
@@ -240,6 +240,16 @@ docker-compose exec kanastra_app tail -f storage/logs/laravel.log
 - **Acessar o banco de dados:**
   ```bash
   docker-compose exec kanastra_db mysql -u laravel -plaravel laravel
+  ```
+
+- **Rodar os testes:**
+  ```bash
+  docker-compose exec kanastra_app php artisan test
+  ```
+
+- **Erro de permissão do Docker:**
+  ```bash
+  sudo chmod 0775 -R kanastra_test
   ```
 
 ---
