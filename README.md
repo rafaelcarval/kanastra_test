@@ -17,7 +17,8 @@
    - [Logs do Laravel](#4-logs-do-laravel)
 7. [🌟 Logs Esperados](#-logs-esperados)
 8. [🧪 Testando o Sistema](#-testando-o-sistema)
-9. [🐳 Comandos Úteis no Docker](#-comandos-úteis-no-docker)
+9. [📊 Gerenciando Laravel Horizon](#-gerenciando-laravel-horizon)
+10. [🐳 Comandos Úteis no Docker](#-comandos-úteis-no-docker)
 
 ---
 
@@ -241,6 +242,42 @@ docker-compose exec kanastra_app tail -f storage/logs/laravel.log
 
 ---
 
+## 📊 Gerenciando Laravel Horizon
+
+### 1. **Iniciar o Horizon**
+
+Execute o seguinte comando para iniciar o Horizon:
+
+```bash
+docker-compose exec kanastra_app php artisan horizon
+```
+
+### 2. **Acessar a Interface Web do Horizon**
+
+Acesse o painel de controle do Horizon pelo navegador:
+
+```
+http://localhost:8081/horizon
+```
+
+### 3. **Verificar o Status do Horizon**
+
+Para verificar o status atual do Horizon:
+
+```bash
+docker-compose exec kanastra_app php artisan horizon:status
+```
+
+### 4. **Parar o Horizon**
+
+Se precisar parar o Horizon:
+
+```bash
+docker-compose exec kanastra_app php artisan horizon:terminate
+```
+
+---
+
 ## 🐳 Comandos Úteis no Docker
 
 - **Erro de permissão do Docker:**
@@ -259,15 +296,11 @@ docker-compose exec kanastra_app tail -f storage/logs/laravel.log
   docker-compose exec kanastra_app bash
   ```
 
-- **Acessar o banco de dados:**
-  ```bash
-  docker-compose exec kanastra_db mysql -u laravel -plaravel laravel
-  ```
-
 - **Rodar os testes:**
   ```bash
   docker-compose exec kanastra_app php artisan test
   ```
+
 ---
 
-FINISHED
+FINISHED  
