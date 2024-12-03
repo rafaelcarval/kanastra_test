@@ -265,7 +265,8 @@ docker-compose exec kanastra_app tail -f storage/logs/laravel.log
 
 - **Erro de permissão do Docker:**
   ```bash
-  sudo chmod 0775 -R kanastra_test
+  docker-compose exec kanastra_app chmod -R 775 storage
+  docker-compose exec kanastra_app chown -R www-data:www-data storage
   ```
 
 ---
