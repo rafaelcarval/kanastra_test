@@ -36,6 +36,12 @@
 4. **Estrutura Modular:**
    - Uso de Services e Jobs para organizar a lógica de processamento.
 
+5. **Monitoramento realtime com Horizon:**
+   - Uso do Laravel Horizon para monitoramento das filas.
+   
+6. **Comandos de permissões do projeto:**
+   - Caso ocorra erro de permissões, rodar comandos úteis do Docker localizado no índice.
+
 ---
 
 ## 🛠️ Pré-requisitos
@@ -70,7 +76,13 @@
 
    Certifique-se de configurar os seguintes valores no `.env`:
    ```env
-   QUEUE_CONNECTION=database
+   QUEUE_CONNECTION=redis
+   CACHE_DRIVER=redis
+   SESSION_DRIVER=redis
+   REDIS_HOST=kanastra_redis
+   REDIS_PASSWORD=null
+   REDIS_PORT=6379
+
    DB_CONNECTION=mysql
    DB_HOST=kanastra_db
    DB_PORT=3306
@@ -282,6 +294,7 @@ docker-compose exec kanastra_app php artisan horizon:terminate
 
 - **Erro de permissão do Docker:**
   ```bash
+  sudo chmod 0777 -R kanastra_test
   docker-compose exec kanastra_app chmod -R 775 storage
   docker-compose exec kanastra_app chown -R www-data:www-data storage
   ```
