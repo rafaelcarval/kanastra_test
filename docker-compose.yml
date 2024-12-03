@@ -12,6 +12,7 @@ services:
       - kanastra_network
     depends_on:
       - kanastra_db
+      - kanastra_redis
     ports:
       - "8001:80"
 
@@ -42,10 +43,20 @@ services:
       - kanastra_network
     depends_on:
       - kanastra_app
+      - kanastra_redis
+  
+  kanastra_redis:
+    image: redis:latest
+    container_name: kanastra_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - kanastra_network
 
 volumes:
   dbdata:
 
 networks:
   kanastra_network:
+    name: kanastra_network
     driver: bridge
